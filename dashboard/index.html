@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>월급쟁이부자들(월부) 강의 분석 대시보드</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>월급쟁이부자들(월부) 강의 분석 대시보드</h1>
+            <p class="subtitle">부동산 투자 교육 플랫폼 · 커뮤니티 MAU 106만 명</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 요약 카드 섹션 -->
+        <section class="summary-cards">
+            <div class="card summary-card">
+                <div class="card-icon">📚</div>
+                <div class="card-value">10</div>
+                <div class="card-label">대표 강의 수</div>
+            </div>
+            <div class="card summary-card">
+                <div class="card-icon">⭐</div>
+                <div class="card-value">4.96</div>
+                <div class="card-label">평균 평점</div>
+            </div>
+            <div class="card summary-card">
+                <div class="card-icon">💬</div>
+                <div class="card-value">69만+</div>
+                <div class="card-label">총 후기 수</div>
+            </div>
+            <div class="card summary-card">
+                <div class="card-icon">👥</div>
+                <div class="card-value">106만</div>
+                <div class="card-label">월간 활성 사용자</div>
+            </div>
+        </section>
+
+        <!-- 수강 로드맵 -->
+        <section class="card roadmap-section">
+            <h2>권장 수강 로드맵</h2>
+            <div class="roadmap">
+                <div class="roadmap-step">
+                    <div class="step-number">1</div>
+                    <div class="step-name">재테크 기초반</div>
+                    <div class="step-desc">월급관리·주식·부동산 종합 입문</div>
+                </div>
+                <div class="roadmap-arrow">→</div>
+                <div class="roadmap-step">
+                    <div class="step-number">2</div>
+                    <div class="step-name">열반스쿨 기초반</div>
+                    <div class="step-desc">소액 부동산 투자 첫걸음</div>
+                </div>
+                <div class="roadmap-arrow">→</div>
+                <div class="roadmap-step">
+                    <div class="step-number">3</div>
+                    <div class="step-name">실전준비반</div>
+                    <div class="step-desc">임장·임장보고서 실전 연습</div>
+                </div>
+                <div class="roadmap-arrow">→</div>
+                <div class="roadmap-step">
+                    <div class="step-number">4</div>
+                    <div class="step-name">열반스쿨 중급반</div>
+                    <div class="step-desc">10억 달성 전략</div>
+                </div>
+                <div class="roadmap-arrow">→</div>
+                <div class="roadmap-step">
+                    <div class="step-number">5</div>
+                    <div class="step-name">열반스쿨 실전반</div>
+                    <div class="step-desc">고급 투자 전략</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 강의 목록 테이블 -->
+        <section class="card">
+            <h2>대표 강의 목록</h2>
+            <div class="filter-bar">
+                <input type="text" id="searchInput" placeholder="강의명 또는 강사명 검색..." class="search-input">
+                <select id="sortSelect" class="sort-select">
+                    <option value="rating">평점순</option>
+                    <option value="reviews">후기 수순</option>
+                    <option value="name">이름순</option>
+                </select>
+            </div>
+            <div class="table-wrapper">
+                <table id="courseTable">
+                    <thead>
+                        <tr>
+                            <th>강의명</th>
+                            <th>강사</th>
+                            <th>카테고리</th>
+                            <th>평점</th>
+                            <th>후기 수</th>
+                            <th>링크</th>
+                        </tr>
+                    </thead>
+                    <tbody id="courseBody">
+                        <!-- JS로 렌더링 -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 차트 섹션 -->
+        <section class="charts-grid">
+            <div class="card">
+                <h2>강의별 후기 수 비교</h2>
+                <canvas id="reviewsChart"></canvas>
+            </div>
+            <div class="card">
+                <h2>강의별 평점 비교</h2>
+                <canvas id="ratingsChart"></canvas>
+            </div>
+        </section>
+
+        <!-- 후기 분석 섹션 -->
+        <section class="card">
+            <h2>수강 후기 종합 분석</h2>
+            <div class="review-analysis">
+                <div class="review-col positive">
+                    <h3>긍정적 후기 요약</h3>
+                    <ul>
+                        <li><strong>체계적 커리큘럼</strong> — 초보자도 이해 가능한 단계별 구성</li>
+                        <li><strong>실전 사례 풍부</strong> — 강사 본인의 성공·실패 경험 공유</li>
+                        <li><strong>높은 몰입도</strong> — 긴 강의에도 집중력 유지</li>
+                        <li><strong>조모임 시스템</strong> — 동료 학습 및 동기 부여 효과</li>
+                        <li><strong>실제 투자 성공</strong> — 내집마련·투자 성공 사례 다수 (전년 대비 199% 증가)</li>
+                        <li><strong>실질적 분석 기법</strong> — 입지요소, 시세트래킹, 저평가 지역 분석법 습득</li>
+                    </ul>
+                </div>
+                <div class="review-col negative">
+                    <h3>비판적 후기 요약</h3>
+                    <ul>
+                        <li><strong>높은 가격</strong> — 강의당 약 45~50만원, 전체 수강 시 수백만원</li>
+                        <li><strong>락인(Lock-in) 구조</strong> — 반복 수강 유도, 시스템 의존 분위기</li>
+                        <li><strong>수강 경쟁 과열</strong> — "광클" 필요, 원하는 시기 수강 어려움</li>
+                        <li><strong>투자 편향성</strong> — 부동산 올인 권유, 다른 투자 대안 부족</li>
+                        <li><strong>전세레버리지 리스크</strong> — 금리 상승·역전세 위험 경고 부족</li>
+                        <li><strong>튜터 자격 의문</strong> — 2~3년차 수강생이 튜터로 활동</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 강의별 상세 후기 -->
+        <section class="card">
+            <h2>강의별 상세 후기</h2>
+            <div class="accordion" id="reviewAccordion">
+                <!-- JS로 렌더링 -->
+            </div>
+        </section>
+
+        <!-- 핵심 인사이트 -->
+        <section class="card insights-section">
+            <h2>핵심 인사이트</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-icon">🎯</div>
+                    <h3>가장 많은 조언</h3>
+                    <p>"기본 강의 1~2개만 듣고 필요한 것만 취한 뒤, 혼자 임장을 다니는 것이 가장 효율적"</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">👩</div>
+                    <h3>주요 수강층</h3>
+                    <p>30~40대 직장인, 내마기 수강생 중 여성 비율 66% (43,790명 vs 22,576명)</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">📈</div>
+                    <h3>성장 추세</h3>
+                    <p>커뮤니티 MAU 106만 명 (전년 대비 26% 증가), 성공 후기 199% 증가</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">⚠️</div>
+                    <h3>주요 리스크</h3>
+                    <p>전세레버리지 기반 투자 구조, 금리 상승기 역전세 위험, 지방 시장 변동성</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>본 대시보드는 학습 목적의 분석 자료입니다. 공식 사이트: <a href="https://weolbu.com" target="_blank">weolbu.com</a></p>
+        <p>데이터 수집일: 2026-03-20 · 출처: 월부 공식 사이트, 블라인드, 블로그 후기</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
